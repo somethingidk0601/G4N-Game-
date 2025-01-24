@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://vtavopjllefr"]
+[gd_scene load_steps=4 format=3 uid="uid://b5ab5a52688ru"]
 
-[ext_resource type="PackedScene" uid="uid://cusp8jbxntpdu" path="res://scene/player.tscn" id="1_6vh3p"]
-[ext_resource type="PackedScene" uid="uid://b3yhtp7kxwn0t" path="res://scene/critter.tscn" id="2_8rowt"]
+[ext_resource type="PackedScene" path="res://scene/player.tscn" id="1_6vh3p"]
+[ext_resource type="PackedScene" path="res://scene/critter.tscn" id="2_8rowt"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_o1iyq"]
 
