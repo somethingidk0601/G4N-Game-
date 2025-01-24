@@ -1,13 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cusp8jbxntpdu"]
+[gd_scene load_steps=6 format=3 uid="uid://bg820mqsj3ipt"]
 
 [ext_resource type="Script" path="res://script/player.gd" id="1_a4pdw"]
 [ext_resource type="Texture2D" uid="uid://cownr45d4aa0i" path="res://assets/tile_0097.png" id="1_pv3cf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ptfmb"]
-radius = 14.0357
+radius = 11.0454
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qrgb7"]
 radius = 4.47214
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0u8hs"]
+radius = 13.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_a4pdw")
@@ -24,10 +27,15 @@ offset_right = -24.0
 offset_bottom = -1.0
 value = 100.0
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="DetectCollisions" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectCollisions"]
 shape = SubResource("CircleShape2D_ptfmb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_qrgb7")
+
+[node name="AttackRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
+shape = SubResource("CircleShape2D_0u8hs")

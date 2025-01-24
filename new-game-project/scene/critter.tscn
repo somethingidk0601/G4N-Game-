@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3yhtp7kxwn0t"]
+[gd_scene load_steps=5 format=3 uid="uid://ni485s1gkpwn"]
 
 [ext_resource type="Script" path="res://script/critter.gd" id="1_d2ft3"]
 [ext_resource type="Texture2D" uid="uid://0ix5xtyberiv" path="res://assets/tile_0122.png" id="2_avynn"]
