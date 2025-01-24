@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqlklvvteaxd1"]
+
+[ext_resource type="Script" path="res://character_body_2d.gd" id="1_5806u"]
+[ext_resource type="Texture2D" uid="uid://dds8v12e4fn0b" path="res://kenney_tiny-town/Tilemap/kenney_tiny-dungeon/Tiles/tile_0098.png" id="2_8aol2"]
+[ext_resource type="PackedScene" uid="uid://i6w6fv1vhw4" path="res://Gun.tscn" id="3_u6lcu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmy4t"]
+size = Vector2(16, 15.5)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(363, 223)
+scale = Vector2(10, 10)
+script = ExtResource("1_5806u")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+texture = ExtResource("2_8aol2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_kmy4t")
+
+[node name="Gun" parent="CharacterBody2D" instance=ExtResource("3_u6lcu")]
+position = Vector2(3.05176e-06, -0.199998)
