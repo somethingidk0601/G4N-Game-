@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://q4w2pmftd4s2"]
+
+[ext_resource type="Script" path="res://character.gd" id="1_72nc8"]
+[ext_resource type="Texture2D" uid="uid://nwcx23obljy6" path="res://kenney_tiny-dungeon/Tiles/tile_0085.png" id="2_pu5r5"]
+[ext_resource type="PackedScene" uid="uid://5gdaumvad4gj" path="res://scenes/weapon.tscn" id="3_tacww"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tgffx"]
+radius = 17.1172
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_72nc8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(97, 33.5)
+scale = Vector2(1.625, 1.4375)
+texture = ExtResource("2_pu5r5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(98, 35)
+shape = SubResource("CircleShape2D_tgffx")
+
+[node name="Weapon" parent="." instance=ExtResource("3_tacww")]
+position = Vector2(108, 39)
+script = null

@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://5gdaumvad4gj"]
+
+[ext_resource type="Texture2D" uid="uid://d32muqec52hw2" path="res://kenney_tiny-dungeon/Tiles/tile_0106.png" id="1_e0omo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ptxuh"]
+radius = 3.9899
+height = 34.0
+
+[sub_resource type="Animation" id="Animation_1lla8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_1cpl2"]
+resource_name = "attack"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(0.15932, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.53678, 0.773342, 0.00798815]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tf0ye"]
+_data = {
+"RESET": SubResource("Animation_1lla8"),
+"attack": SubResource("Animation_1cpl2")
+}
+
+[node name="Weapon" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.000841736, -2.96)
+scale = Vector2(0.999895, 2)
+texture = ExtResource("1_e0omo")
+offset = Vector2(0, -3.52)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("CapsuleShape2D_ptxuh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tf0ye")
+}

@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dswxpfps1i81p"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_bslv5"]
+[ext_resource type="Texture2D" uid="uid://nwcx23obljy6" path="res://kenney_tiny-dungeon/Tiles/tile_0085.png" id="1_whcsy"]
+[ext_resource type="PackedScene" uid="uid://5gdaumvad4gj" path="res://scenes/weapon.tscn" id="3_e6ob0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bn42m"]
+radius = 21.2132
+
+[node name="Camera" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 2220
+limit_bottom = 725
+editor_draw_limits = true
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_bslv5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(101, 100)
+scale = Vector2(1.78125, 1.90625)
+texture = ExtResource("1_whcsy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(100, 100)
+shape = SubResource("CircleShape2D_bn42m")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Weapon" parent="Player" instance=ExtResource("3_e6ob0")]
+position = Vector2(112, 110)
