@@ -1,34 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5ab5a52688ru"]
+[gd_scene load_steps=4 format=3 uid="uid://vtavopjllefr"]
 
-[ext_resource type="Texture2D" uid="uid://chwqcq14vb6k0" path="res://assets/enemy icon/tile_0097.png" id="1_3qdad"]
-[ext_resource type="Script" path="res://enemy.gd" id="2_jpyqc"]
-[ext_resource type="Texture2D" uid="uid://dubcsv838aehn" path="res://assets/enemy icon/tile_0111.png" id="3_lxvht"]
+[ext_resource type="PackedScene" uid="uid://cusp8jbxntpdu" path="res://scene/player.tscn" id="1_6vh3p"]
+[ext_resource type="PackedScene" uid="uid://b3yhtp7kxwn0t" path="res://scene/critter.tscn" id="2_8rowt"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hsdcm"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_o1iyq"]
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(105, -54)
 
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(-104, 52)
+[node name="Player" parent="." instance=ExtResource("1_6vh3p")]
+position = Vector2(5, -6)
 
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture_filter = 1
-texture = ExtResource("1_3qdad")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("CircleShape2D_hsdcm")
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
 
-[node name="Enemy" type="CharacterBody2D" parent="."]
-position = Vector2(156, -26)
-script = ExtResource("2_jpyqc")
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
-texture_filter = 1
-texture = ExtResource("3_lxvht")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 22)
+shape = SubResource("WorldBoundaryShape2D_o1iyq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
-shape = SubResource("CircleShape2D_hsdcm")
+[node name="Critter" parent="." instance=ExtResource("2_8rowt")]
+position = Vector2(71, 13)
