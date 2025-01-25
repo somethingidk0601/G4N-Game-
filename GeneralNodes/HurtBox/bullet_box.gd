@@ -23,4 +23,5 @@ func AreaEntered( a : Area2D ) -> void:
 			bubble.TakeDamage(damage)
 			print("Bullet hit a bubble!")
 		queue_free()
+		get_parent().queue_free()
 	pass
