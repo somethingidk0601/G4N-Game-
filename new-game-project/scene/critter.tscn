@@ -25,8 +25,8 @@ shape = SubResource("CircleShape2D_ovo07")
 shape = SubResource("CircleShape2D_ffoas")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = -43.0
-offset_top = -48.0
-offset_right = -39.0
-offset_bottom = -21.0
+offset_left = -19.0
+offset_top = -33.0
+offset_right = -15.0
+offset_bottom = -6.0
 value = 100.0
