@@ -1,17 +1,24 @@
 [gd_scene load_steps=3 format=3 uid="uid://c0gqg00qcymd"]
 
 [ext_resource type="PackedScene" uid="uid://dnvuejc2mtkoj" path="res://Player/player.tscn" id="1_qkhuy"]
-[ext_resource type="Texture2D" uid="uid://bm3tf8lb5r586" path="res://assets/pixil-frame-0-Photoroom.png" id="2_y40m6"]
+[ext_resource type="PackedScene" uid="uid://d3bffrsfutdj5" path="res://Props/Bubble/bubble.tscn" id="2_nl6fk"]
 
 [node name="main" type="Node2D"]
+y_sort_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_qkhuy")]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Bubble" parent="." instance=ExtResource("2_nl6fk")]
+position = Vector2(96, 96)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="Bubble2" parent="." instance=ExtResource("2_nl6fk")]
+position = Vector2(456, 296)
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(211.556, 180)
-scale = Vector2(0.277778, 0.277778)
-texture = ExtResource("2_y40m6")
+[node name="Bubble3" parent="." instance=ExtResource("2_nl6fk")]
+position = Vector2(784, 184)
+
+[node name="Bubble4" parent="." instance=ExtResource("2_nl6fk")]
+position = Vector2(608, 240)
+
+[node name="Bubble5" parent="." instance=ExtResource("2_nl6fk")]
+position = Vector2(616, 64)

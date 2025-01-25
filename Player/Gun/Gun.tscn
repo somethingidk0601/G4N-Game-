@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cugphehhhmxfk"]
+
+[ext_resource type="Script" path="res://Player/Scripts/gun.gd" id="1_hxj83"]
+
+[node name="Gun" type="Node2D"]
+script = ExtResource("1_hxj83")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+texture_filter = 1
+
+[node name="Timer" type="Timer" parent="."]
