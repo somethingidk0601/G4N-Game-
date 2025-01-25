@@ -1,46 +1,35 @@
-extends Node2D
+extends CharacterBody2D 
 
 @export var shootSpeed = 1.0
-const Bullet = preload( "res://Player/Gun/Bullet.tscn" )
+const bulletPath = preload( "res://Player/Gun/Bullet.tscn" )
 
-@onready var marker_2d = $Marker2D
 @onready var shoot_speed_timer = $Timer
 
 var canShoot = true
-var bulletDirection = Vector2(1,0)
 
 func _ready():
 	shoot_speed_timer.wait_time = 0.24 / shootSpeed
+
+func _process(delta):
+	$Node2D.look_at(get_global_mouse_position())
+	if Input.is_action_pressed("Click"):
+		$".".visible = true
+		$".".shoot()
+	else:
+		$".".visible = false
+	pass
 
 func shoot():
 	if canShoot:
 		canShoot = false
 		shoot_speed_timer.start()
+		var bullet = bulletPath.instantiate()
 		
-		var bulletNode = Bullet.instantiate()
+		bullet.dir=$Node2D/Marker2D.global_rotation
+		bullet.pos=$Node2D/Marker2D.global_position
+		bullet.rota=$Node2D/Marker2D.global_rotation
+	
+		get_parent().add_child(bullet)
 		
-		bulletNode.set_direction(bulletDirection)
-		get_tree().root.add_child(bulletNode)
-		bulletNode.global_position = marker_2d.global_position
-
-
 func _on_timer_timeout():
 	canShoot = true
-	
-func setup_direction(direction):
-	bulletDirection = direction
-	z_index = -1
-	if direction.x > 0 :
-		scale.x = 1
-		rotation_degrees = 0
-	elif direction.x < 0:
-		scale.x = -1 
-		rotation_degrees = 0
-	elif direction.y < 0:
-		scale.x = 1 
-		rotation_degrees = -90
-	elif direction.y > 0:
-		scale.x = 1 
-		rotation_degrees = 90
-		z_index = 0
-	

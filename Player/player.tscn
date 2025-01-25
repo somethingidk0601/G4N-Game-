@@ -550,4 +550,4 @@ max_polyphony = 4
 script = ExtResource("10_g503i")
 
 [node name="Gun" parent="." instance=ExtResource("12_4mvig")]
-z_index = -1
+visible = false

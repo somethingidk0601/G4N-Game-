@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://clfek0lys7re7" path="res://assets/bullet.png" id="1_0a37e"]
 [ext_resource type="Script" path="res://Player/Scripts/bullet.gd" id="1_ujefu"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7mitw"]
-radius = 2.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n40q8"]
+size = Vector2(8, 2)
 
-[node name="Bullet" type="Area2D"]
+[node name="Bullet" type="CharacterBody2D"]
 script = ExtResource("1_ujefu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -17,7 +17,4 @@ scale = Vector2(0.649306, 0.649306)
 texture = ExtResource("1_0a37e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 0)
-shape = SubResource("CircleShape2D_7mitw")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+shape = SubResource("RectangleShape2D_n40q8")

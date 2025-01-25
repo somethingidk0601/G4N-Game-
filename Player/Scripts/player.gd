@@ -7,7 +7,6 @@ var direction : Vector2 = Vector2.ZERO
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @onready var sprite : Sprite2D = $Sprite2D
 @onready var state_machine : PlayerStateMachine = $StateMachine
-@onready var gun = $Gun
 
 signal DirectionChanged( new_direction: Vector2 )
 
@@ -19,12 +18,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process( delta ):
-	if Input.is_action_pressed("Click"):
-		gun.shoot()
 	direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	direction.y = Input.get_action_strength("down") - Input.get_action_strength("up")
-	if direction != Vector2.ZERO:
-		gun.setup_direction(direction)	
 	pass
 
 func _physics_process(delta):
