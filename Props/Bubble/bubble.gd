@@ -8,5 +8,7 @@ func _ready() -> void:
 
 
 func TakeDamage( _damage: int) -> void:
+	print("Bubble destroyed")
+	$HitBox.queue_free()
 	queue_free()
 	pass

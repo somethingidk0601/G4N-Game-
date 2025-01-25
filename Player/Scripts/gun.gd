@@ -1,8 +1,9 @@
-extends CharacterBody2D 
+extends Node2D 
 
 @export var shootSpeed = 1.0
 const bulletPath = preload( "res://Player/Gun/Bullet.tscn" )
 
+@onready var bow: Marker2D = $Marker2D
 @onready var shoot_speed_timer = $Timer
 
 var canShoot = true
@@ -11,25 +12,27 @@ func _ready():
 	shoot_speed_timer.wait_time = 0.24 / shootSpeed
 
 func _process(delta):
-	$Node2D.look_at(get_global_mouse_position())
-	if Input.is_action_pressed("Click"):
-		$".".visible = true
-		$".".shoot()
-	else:
-		$".".visible = false
-	pass
-
-func shoot():
 	if canShoot:
 		canShoot = false
 		shoot_speed_timer.start()
-		var bullet = bulletPath.instantiate()
+		look_at(get_global_mouse_position())
 		
-		bullet.dir=$Node2D/Marker2D.global_rotation
-		bullet.pos=$Node2D/Marker2D.global_position
-		bullet.rota=$Node2D/Marker2D.global_rotation
-	
-		get_parent().add_child(bullet)
+		rotation_degrees = wrap(rotation_degrees,0,360)
+		if rotation_degrees > 90 and rotation_degrees < 270:
+			scale.y =-1
+		else:
+			scale.y = 1
 		
+		if Input.is_action_pressed("Click"):
+			$".".visible = true
+			var bullet_instance = bulletPath.instantiate()
+			get_tree().root.add_child(bullet_instance)
+			bullet_instance.global_position = bow.global_position
+			bullet_instance.rotation = rotation
+		else:
+			$".".visible = false
+		pass
+
+
 func _on_timer_timeout():
 	canShoot = true

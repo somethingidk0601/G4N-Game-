@@ -1,16 +1,12 @@
-extends CharacterBody2D
+extends Node2D
 
 @export var speed = 300
 @export var damage = 15
+@onready var bullet_box : BulletBox = $BulletBox
 
-var pos:Vector2
-var rota: float
-var dir : float
+func _process(delta: float) -> void:
+	position += transform.x * speed * delta
 
-func _ready():
-	global_position=pos
-	global_rotation=rota
 
-func _physics_process(delta):
-	velocity = Vector2(speed,0).rotated(dir)
-	move_and_slide()
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()

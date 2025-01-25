@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi1s5rwys7a1v"]
+
+[ext_resource type="Script" path="res://GeneralNodes/HurtBox/bullet_box.gd" id="1_q3pje"]
+
+[node name="BulletBox" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_q3pje")
