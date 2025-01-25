@@ -3,6 +3,10 @@ extends Area2D
 @export var speed = 700
 @export var damage = 15
 
+var pos:Vector2
+var rota:float
+var dir: float
+
 var direction:Vector2
 
 func _ready():

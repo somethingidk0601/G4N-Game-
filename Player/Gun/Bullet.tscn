@@ -4,17 +4,20 @@
 [ext_resource type="Script" path="res://Player/Scripts/bullet.gd" id="1_ujefu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7mitw"]
+radius = 2.0
 
 [node name="Bullet" type="Area2D"]
 script = ExtResource("1_ujefu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(186, 98)
+position = Vector2(1.96695e-06, 9.09495e-13)
 rotation = 1.5708
-scale = Vector2(3, 3)
+scale = Vector2(0.649306, 0.649306)
 texture = ExtResource("1_0a37e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(195, 98)
+position = Vector2(2, 0)
 shape = SubResource("CircleShape2D_7mitw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

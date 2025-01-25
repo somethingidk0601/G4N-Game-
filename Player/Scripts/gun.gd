@@ -29,7 +29,7 @@ func _on_timer_timeout():
 	
 func setup_direction(direction):
 	bulletDirection = direction
-	
+	z_index = -1
 	if direction.x > 0 :
 		scale.x = 1
 		rotation_degrees = 0
@@ -41,5 +41,6 @@ func setup_direction(direction):
 		rotation_degrees = -90
 	elif direction.y > 0:
 		scale.x = 1 
-		rotation_degrees = 90				
+		rotation_degrees = 90
+		z_index = 0
 	
