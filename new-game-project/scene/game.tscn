@@ -415,10 +415,10 @@ scale = Vector2(2.4, 2.45)
 polygon = PackedVector2Array(-10, 9.18369, 9.58337, 8.77551, 9.58337, -10.4082, -10, -10.4082)
 
 [node name="Player" parent="." instance=ExtResource("3_3m15r")]
-position = Vector2(2123, 464)
+position = Vector2(462, 431)
 
 [node name="Critter" parent="." instance=ExtResource("4_rld0q")]
-position = Vector2(1866, 286)
+position = Vector2(1264, 149)
 
 [node name="Boss" parent="." instance=ExtResource("5_6xfsb")]
 position = Vector2(456, 350)

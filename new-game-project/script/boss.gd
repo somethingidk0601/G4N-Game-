@@ -34,7 +34,7 @@ func _physics_process(delta):
 		velocity = direction * speed
 		move_and_slide()
 		attack_player(delta)
-		await special_attack(delta)
+		special_attack(delta)
 	else:
 		velocity = Vector2.ZERO
 		move_and_slide()

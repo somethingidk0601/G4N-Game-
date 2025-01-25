@@ -9,6 +9,7 @@ var max_health: int = 100
 var last_attack_time: float = 0.0  # Track last attack time
 
 @onready var health_bar = $ProgressBar
+@onready var attack_area = $AttackRange  # This should be an Area2D node with CollisionShape2D
 
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO
@@ -35,10 +36,12 @@ func attack_enemies() -> void:
 		last_attack_time = current_time
 		
 		# Find all bodies in attack range (you'll need to add an Area2D to detect nearby enemies)
-		var overlapping_bodies = $AttackArea.get_overlapping_bodies()
+		var overlapping_bodies = attack_area.get_overlapping_bodies()
 		for body in overlapping_bodies:
-			if body.has_method("take_damage"):
+			# Check that the body is not the player
+			if body != self and body.has_method("take_damage"):
 				body.take_damage(attack_damage)
+
 
 func take_damage(amount: int) -> void:
 	health -= amount
