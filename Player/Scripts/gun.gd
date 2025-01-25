@@ -9,7 +9,7 @@ const bulletPath = preload( "res://Player/Gun/Bullet.tscn" )
 var canShoot = true
 
 func _ready():
-	shoot_speed_timer.wait_time = 0.24 / shootSpeed
+	shoot_speed_timer.wait_time = 0.1 / shootSpeed
 
 func _process(delta):
 	if canShoot:

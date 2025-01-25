@@ -551,3 +551,5 @@ script = ExtResource("10_g503i")
 
 [node name="Gun" parent="." instance=ExtResource("12_4mvig")]
 visible = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
