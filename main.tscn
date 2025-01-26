@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0gqg00qcymd"]
+[gd_scene load_steps=5 format=3 uid="uid://c0gqg00qcymd"]
 
 [ext_resource type="PackedScene" uid="uid://dnvuejc2mtkoj" path="res://Player/player.tscn" id="1_qkhuy"]
 [ext_resource type="PackedScene" uid="uid://d3bffrsfutdj5" path="res://Props/Bubble/bubble.tscn" id="2_nl6fk"]
+[ext_resource type="PackedScene" uid="uid://bt7x1hqsc1e4q" path="res://Enemies/Critter/critter.tscn" id="3_krq8c"]
+[ext_resource type="PackedScene" uid="uid://cxujhde4wcrfr" path="res://Enemies/Creep/creep.tscn" id="4_xysde"]
 
 [node name="main" type="Node2D"]
 y_sort_enabled = true
@@ -11,9 +13,6 @@ y_sort_enabled = true
 [node name="Bubble" parent="." instance=ExtResource("2_nl6fk")]
 position = Vector2(96, 96)
 
-[node name="Bubble2" parent="." instance=ExtResource("2_nl6fk")]
-position = Vector2(456, 296)
-
 [node name="Bubble3" parent="." instance=ExtResource("2_nl6fk")]
 position = Vector2(784, 184)
 
@@ -22,3 +21,12 @@ position = Vector2(464, 544)
 
 [node name="Bubble5" parent="." instance=ExtResource("2_nl6fk")]
 position = Vector2(464, 368)
+
+[node name="Critter" parent="." instance=ExtResource("3_krq8c")]
+position = Vector2(368, 232)
+
+[node name="Bubble2" parent="." instance=ExtResource("2_nl6fk")]
+position = Vector2(368, 240)
+
+[node name="Creep" parent="." instance=ExtResource("4_xysde")]
+position = Vector2(648, 288)
