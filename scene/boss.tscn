@@ -169,6 +169,7 @@ animations = [{
 radius = 8.0
 
 [node name="Boss" type="CharacterBody2D"]
+scale = Vector2(1.2, 1.2)
 script = ExtResource("1_mobc4")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
@@ -176,15 +177,20 @@ offset_left = -29.0
 offset_top = -36.0
 offset_right = -25.0
 offset_bottom = -9.0
+scale = Vector2(1.2, 1.2)
 max_value = 300.0
 value = 300.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1.2, 1.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.2, 1.2)
 shape = SubResource("CircleShape2D_73svv")
 
 [node name="SpecialAttackArea" type="Area2D" parent="."]
+scale = Vector2(1.2, 1.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpecialAttackArea"]
 visible = false
@@ -192,12 +198,13 @@ position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_igdji")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.2, 1.2)
 shape = SubResource("CircleShape2D_vcbv0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, -11)
-scale = Vector2(0.390625, 0.390625)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_til3t")
 animation = &"dead"
 autoplay = "idle"
@@ -205,7 +212,9 @@ frame = 2
 frame_progress = 1.0
 
 [node name="HitBox" parent="." instance=ExtResource("6_focrq")]
+scale = Vector2(1.2, 1.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+scale = Vector2(1.2, 1.2)
 shape = SubResource("CircleShape2D_40fjn")
 debug_color = Color(0.877301, 0.331694, 0.223602, 0.42)
