@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://sprlvcj36bgf"
+path="res://.godot/imported/Opening 1.mp3-408c75d3f6c7ce63fdd21341cb932f22.mp3str"
+
+[deps]
+
+source_file="res://UI Elements/Opening 1.mp3"
+dest_files=["res://.godot/imported/Opening 1.mp3-408c75d3f6c7ce63fdd21341cb932f22.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://bn5xceh6hraat"]
+
+[ext_resource type="Script" path="res://UI Elements/pause_wait_aminute_eushaissmellinghisfeet.gd" id="1_ojro2"]
+
+[node name="PauseWaitAminuteEushaissmellinghisfeet" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ojro2")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 250.0
+offset_right = 678.0
+offset_bottom = 409.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Resume" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Resume"
+
+[node name="Restart" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Restart"
+
+[node name="ReturnToMenu" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Return to Menu"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ReturnToMenu" to="." method="_on_return_to_menu_pressed"]

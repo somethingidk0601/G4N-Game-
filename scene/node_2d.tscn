@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5ab5a52688ru"]
+
+[ext_resource type="PackedScene" uid="uid://bg820mqsj3ipt" path="res://scene/player.tscn" id="1_6vh3p"]
+[ext_resource type="PackedScene" uid="uid://ni485s1gkpwn" path="res://scene/critter.tscn" id="2_8rowt"]
+[ext_resource type="PackedScene" uid="uid://bg3w0h0u25nki" path="res://scene/boss.tscn" id="3_m77i8"]
+[ext_resource type="PackedScene" uid="uid://caaevv65qcscq" path="res://scene/ghost.tscn" id="4_d6xnh"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_6vh3p")]
+position = Vector2(5, -6)
+
+[node name="Critter" parent="." instance=ExtResource("2_8rowt")]
+position = Vector2(71, 13)
+
+[node name="Boss" parent="." instance=ExtResource("3_m77i8")]
+position = Vector2(-67, -5)
+
+[node name="Ghost" parent="." instance=ExtResource("4_d6xnh")]
+position = Vector2(0, 48)

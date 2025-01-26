@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch58xj55smnjw"]
+
+[ext_resource type="Texture2D" uid="uid://clfek0lys7re7" path="res://assets/bullet.png" id="1_0a37e"]
+[ext_resource type="Script" path="res://Player/Scripts/bullet.gd" id="1_ujefu"]
+[ext_resource type="PackedScene" uid="uid://bi1s5rwys7a1v" path="res://GeneralNodes/HurtBox/bullet_box.tscn" id="3_7oqhg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i1jc1"]
+radius = 2.0
+
+[node name="Bullet" type="Node2D"]
+script = ExtResource("1_ujefu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1.96695e-06, 9.09495e-13)
+rotation = 1.5708
+scale = Vector2(0.649306, 0.649306)
+texture = ExtResource("1_0a37e")
+
+[node name="BulletBox" parent="." instance=ExtResource("3_7oqhg")]
+position = Vector2(2, 0)
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletBox"]
+shape = SubResource("CircleShape2D_i1jc1")
+debug_color = Color(0.946708, 0.206438, 0.275978, 0.42)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-3.05176e-05, 5.00003)
+scale = Vector2(18.5406, 18.5406)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

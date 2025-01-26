@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b433kw5my3g3x"
+path="res://.godot/imported/SadMusic2018-12-29_-_Cold_Isolation_-_David_Fesliyan.mp3-f1310f9d5cf556c7d434f1244ca69fa1.mp3str"
+
+[deps]
+
+source_file="res://UI Elements/SadMusic2018-12-29_-_Cold_Isolation_-_David_Fesliyan.mp3"
+dest_files=["res://.godot/imported/SadMusic2018-12-29_-_Cold_Isolation_-_David_Fesliyan.mp3-f1310f9d5cf556c7d434f1244ca69fa1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

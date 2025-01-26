@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://dt6o0bsr5v6t5"]
+
+[ext_resource type="Script" path="res://UI Elements/instruction_menu.gd" id="1_23mie"]
+[ext_resource type="FontFile" uid="uid://jaukwg7gx343" path="res://UI Elements/AlikeAngular-Regular.ttf" id="1_ibsp4"]
+[ext_resource type="Texture2D" uid="uid://cf5bnamfgvvvv" path="res://kenney_tiny-dungeon/Tiles/tile_0109.png" id="2_aevmv"]
+[ext_resource type="Texture2D" uid="uid://o7o71grj3py" path="res://kenney_tiny-dungeon/Tiles/tile_0121.png" id="3_7we02"]
+[ext_resource type="Texture2D" uid="uid://w0ug41ukul85" path="res://kenney_tiny-dungeon/Tiles/tile_0108.png" id="3_nh17x"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_23mie")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 1278.0
+offset_bottom = 720.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 45.0
+offset_right = 1141.0
+offset_bottom = 629.0
+
+[node name="Label" type="Label" parent="Panel/PanelContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ibsp4")
+theme_override_font_sizes/font_size = 35
+text = "Instruction 
+
+Move : W A S D
+
+Attack using Sword : Left Mouse Button
+
+Attack Using Bow : Right Mouse Button "
+horizontal_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 41.0
+offset_top = 57.0
+offset_right = 81.0
+offset_bottom = 97.0
+scale = Vector2(2.48, 2.2)
+texture_normal = ExtResource("3_nh17x")
+texture_pressed = ExtResource("3_7we02")
+texture_hover = ExtResource("2_aevmv")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 146.0
+offset_right = 167.0
+offset_bottom = 211.0
+theme_override_fonts/font = ExtResource("1_ibsp4")
+theme_override_font_sizes/font_size = 35
+text = "Return"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Panel/TextureButton" to="." method="_on_texture_button_pressed"]
