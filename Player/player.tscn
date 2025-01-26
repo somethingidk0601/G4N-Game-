@@ -1,7 +1,7 @@
 [gd_scene load_steps=32 format=3 uid="uid://dnvuejc2mtkoj"]
 
 [ext_resource type="Script" path="res://Player/Scripts/player.gd" id="1_xp5mt"]
-[ext_resource type="Texture2D" uid="uid://cs7q5glhwhho6" path="res://assets/PlayerSprite02.png" id="2_4viu5"]
+[ext_resource type="Texture2D" uid="uid://ctcm5fx6dstk5" path="res://assets/PlayerSprite.png" id="2_kf5cc"]
 [ext_resource type="Texture2D" uid="uid://o28aa2rf4jld" path="res://assets/AttackSprite01.png" id="3_68dut"]
 [ext_resource type="Texture2D" uid="uid://bq8bomrk2yuop" path="res://assets/Shadow.png" id="3_g85ae"]
 [ext_resource type="Script" path="res://Player/Scripts/player_state_machine.gd" id="3_ojj1o"]
@@ -497,7 +497,7 @@ shape = SubResource("CircleShape2D_e6wl5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.02695, 1)
-texture = ExtResource("2_4viu5")
+texture = ExtResource("2_kf5cc")
 hframes = 16
 vframes = 3
 
