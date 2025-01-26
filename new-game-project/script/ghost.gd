@@ -3,6 +3,9 @@ extends CharacterBody2D
 @export var speed: float = 100.0
 @export var attack_damage: int = 10
 @export var attack_cooldown: float = 1.0
+
+@onready var animated_sprite = $AnimatedSprite2D  # Reference to the AnimatedSprite2D node
+
 var player_detected = false
 var player: Node = null
 var last_attack_time: float = 0.0
@@ -27,11 +30,19 @@ func _physics_process(delta):
 		velocity = direction * speed
 		move_and_slide()
 
+		# Play the attack animation when in range
+		if animated_sprite.animation != "attack":
+			animated_sprite.play("attack")
+
 		# Attempt to attack the player
 		attack_player(delta)
 	else:
 		velocity = Vector2.ZERO
 		move_and_slide()
+
+		# Play the idle animation when out of range
+		if animated_sprite.animation != "idle":
+			animated_sprite.play("idle")
 
 # Attack logic
 func attack_player(delta: float):
