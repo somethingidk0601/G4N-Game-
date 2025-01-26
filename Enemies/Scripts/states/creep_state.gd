@@ -5,7 +5,7 @@ var state_machine : CreepStateMachine
 
 
 #What happens when we initialize this state?
-func _init() -> void:
+func init() -> void:
 	pass
 
 #What happens when creep enters this State?

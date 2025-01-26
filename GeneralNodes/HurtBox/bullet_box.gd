@@ -18,6 +18,7 @@ func _process(delta):
 func AreaEntered( a : Area2D ) -> void:
 	print("Bullet hit: ", a.name)
 	if a is HitBox:
+		a.TakeDamage(damage)
 		var bubble = a.get_parent()
 		if bubble and bubble is Bubble:
 			bubble.TakeDamage(damage)
