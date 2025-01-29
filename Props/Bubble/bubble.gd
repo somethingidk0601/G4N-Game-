@@ -4,6 +4,8 @@ class_name Bubble extends Node2D
 @export var enemy_scene2 = preload("res://scene/critter.tscn")
 @export var enemy_scene3 = preload("res://Enemies/Creep/creep.tscn")
 
+var has_taken_damage = false  # Prevent multiple executions
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$HitBox.Damaged.connect( TakeDamage )
@@ -11,6 +13,9 @@ func _ready() -> void:
 
 
 func TakeDamage( _damage: int) -> void:
+	if has_taken_damage:
+		return  # Stop if already triggered
+	has_taken_damage = true
 	print("Bubble destroyed")
 	spawn_random_enemy()
 	$HitBox.queue_free()
@@ -33,5 +38,8 @@ func spawn_random_enemy():
 	if enemy_instance:
 		enemy_instance.position = self.position
 		get_parent().add_child(enemy_instance)
+		
+		if enemy_instance.has_method("set_velocity"):
+			enemy_instance.set_velocity(Vector2.ZERO)
 	
 	enemy_instance = null
